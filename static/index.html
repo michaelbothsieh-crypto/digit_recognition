@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Handwritten Digit Recognition</title>
+    <title>手寫數字辨識系統</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Digit Recognition</h1>
+        <h1>手寫數字辨識</h1>
         <div class="canvas-container">
             <canvas id="drawingCanvas" width="280" height="280"></canvas>
         </div>
         <div class="controls">
-            <button id="clearBtn" class="btn secondary">Clear</button>
-            <button id="predictBtn" class="btn primary">Predict</button>
+            <button id="clearBtn" class="btn secondary">清除</button>
+            <button id="predictBtn" class="btn primary">辨識</button>
         </div>
         <div id="result" class="result-container">
-            <span class="label">Prediction:</span>
+            <span class="label">辨識結果：</span>
             <span id="predictionValue" class="value">-</span>
         </div>
     </div>

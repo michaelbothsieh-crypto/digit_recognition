@@ -91,14 +91,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(data => {
                     if (data.error) {
                         alert(data.error);
-                        predictionValue.textContent = 'Err';
+                        predictionValue.textContent = '錯誤';
                     } else {
                         predictionValue.textContent = data.digit;
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    predictionValue.textContent = 'Err';
+                    predictionValue.textContent = '錯誤';
                 });
         });
     });

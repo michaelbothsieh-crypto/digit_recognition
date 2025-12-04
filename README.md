@@ -1,11 +1,11 @@
-# 手寫數字辨識系統 (Handwritten Digit Recognition)
+# 手寫數字辨識系統
 
 這是一個基於網頁的手寫數字辨識系統，使用 Python (FastAPI, Scikit-learn) 作為後端，並使用原生 HTML/JS 作為前端。
 
 ## 功能特色
 
 *   **手寫板介面**：支援滑鼠與觸控操作的畫布。
-*   **即時辨識**：畫完數字後點擊「Predict」即可獲得結果。
+*   **即時辨識**：畫完數字後點擊「辨識」即可獲得結果。
 *   **高準確率**：使用經過資料增強 (Data Augmentation) 訓練的 MLP (Multi-Layer Perceptron) 模型，準確率達 98.7%。
 *   **強大的前處理**：
     *   自動裁切數字邊界 (Bounding Box)。

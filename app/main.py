@@ -102,7 +102,7 @@ async def predict(file: UploadFile = File(...)):
         if os.path.exists(model_path):
             model = joblib.load(model_path)
         else:
-            return {"error": "Model not loaded"}
+            return {"error": "模型未加載"}
     
     contents = await file.read()
     image = Image.open(io.BytesIO(contents))
@@ -111,7 +111,7 @@ async def predict(file: UploadFile = File(...)):
     img_array = preprocess_image(image)
     
     if img_array is None:
-        return {"error": "No digit detected"}
+        return {"error": "未檢測到數字"}
     
     prediction = model.predict(img_array)
     return {"digit": int(prediction[0])}
