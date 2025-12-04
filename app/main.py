@@ -8,6 +8,11 @@ import io
 import os
 from scipy import ndimage
 import math
+import sys
+
+# Add parent directory to path to import model.train
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
+from model.train import train_model
 
 app = FastAPI()
 
@@ -22,7 +27,16 @@ async def load_model():
         model = joblib.load(model_path)
         print("Model loaded successfully.")
     else:
-        print("Model file not found. Please train the model first.")
+        print("Model file not found. Attempting to train model...")
+        try:
+            train_model()
+            if os.path.exists(model_path):
+                model = joblib.load(model_path)
+                print("Model trained and loaded successfully.")
+            else:
+                print("Training failed to produce model file.")
+        except Exception as e:
+            print(f"Error during auto-training: {e}")
 
 import time
 
